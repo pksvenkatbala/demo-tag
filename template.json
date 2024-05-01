@@ -1,13 +1,16 @@
 {
 	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
-	"resources": [{
+	"resources": [
+      {
 		"type": "Microsoft.Authorization/policyDefinitions",
 		"apiVersion": "2019-09-01",
 		"name": "enforceEnvironmentTag_via_ARM",
 		"properties": {
 			"displayName": "Enforce Environment Tag_New",
 			"description": "This policy ensures that resources have an 'environment' tag with allowed values: Production, Development, or Test.",
+			"policyDefinitionId": "/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e/providers/Microsoft.Authorization/policyDefinitions/ResourceNaming",
+			"scope": "/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e",
 			"mode": "Indexed",
 			"parameters": {},
 			"policyRule": {
@@ -20,13 +23,12 @@
 				"then": {
 					"effect": "deny"
 				}
-			},
-			"id": "/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e/providers/Microsoft.Authorization/policyDefinitions/874bdea3-c575-436f-b1c6-a62a9039744b",
-      "type": "Microsoft.Authorization/policyDefinitions",
-			"name": "874bdea3-c575-436f-b1c6-a62a9039744b"
-			
-			
+				},
+			"id": "/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e/providers/Microsoft.Authorization/policyAssignments/EnforceNaming",
+			"type": "Microsoft.Authorization/policyAssignments",
+			"name": "EnforceNaming"
+
 		}
 	}
-   ]
+  ]
 }

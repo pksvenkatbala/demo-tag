@@ -12,7 +12,7 @@ steps:
     subscriptionId: '07c422d2-16c4-49e4-ad58-9e559d0ff47e'
     Subscription name: Free Trail
     action: 'Create Or Update Resource Group'
-    resourceGroupName: '/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e/resourcegroups/RG03'
+    resourceGroupName: 'RG03'
     location: 'eastus'
     templateLocation: 'Linked artifact'
     csmFile: 'template.json'

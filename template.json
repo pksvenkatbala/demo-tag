@@ -21,7 +21,7 @@
 					"effect": "deny"
 				}
 			},
-			"id": "/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e/resourceGroups/RG03",
+			"id": "/subscriptions/id/07c422d2-16c4-49e4-ad58-9e559d0ff47e/resourceGroups/RG03",
 			"name": "RG03",
 			"type": "Microsoft.Resources/resourceGroups"
 			

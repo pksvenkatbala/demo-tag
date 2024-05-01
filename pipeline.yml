@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'serviceconnection01'
+    subscriptionId: '07c422d2-16c4-49e4-ad58-9e559d0ff47e'
+    Subscription name: Free Trail
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'RG03'
+    location: 'North Europe'
+    templateLocation: 'Linked artifact'
+    csmFile: 'template.json'
+    deploymentMode: 'Incremental'

@@ -13,7 +13,7 @@ steps:
     Subscription name: Free Trail
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'RG03'
-    location: 'North Europe'
+    location: 'eastus'
     templateLocation: 'Linked artifact'
     csmFile: 'template.json'
     deploymentMode: 'Incremental'

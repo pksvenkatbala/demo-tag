@@ -21,9 +21,11 @@
 					"effect": "deny"
 				}
 			},
-			"id": "/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e/providers/Microsoft.Authorization/policyDefinitions/874bdea3-c575-436f-b1c6-a62a9039744b",
-			"type": "Microsoft.Authorization/policyDefinitions"
+			"id": "/subscriptions/07c422d2-16c4-49e4-ad58-9e559d0ff47e/resourceGroups/RG03",
+			"name": "RG03",
+			"type": "Microsoft.Resources/resourceGroups"
+			
 		}
 	}
-  ]
+   ]
 }

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+      {
+        "type": "Microsoft.Authorization/policyDefinitions",
+        "apiVersion": "2019-09-01",
+        "name": "enforceEnvironmentTag_via_ARM",
+        "properties": {
+          "displayName": "Enforce Environment Tag",
+          "description": "This policy ensures that resources have an 'environment' tag with allowed values: Production, Development, or Test.",
+          "mode": "Indexed",
+          "parameters": {},
+          "policyRule": {
+            "if": {
+              "not": {
+                "field": "tags['environment']",
+                "in": ["Production", "Development", "Test"]
+              }
+            },
+            "then": {
+              "effect": "deny"
+            }
+          }
+        }
+      }
+    ]
+  }
+  

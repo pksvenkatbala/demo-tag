@@ -1,0 +1,27 @@
+parameters:
+ - name: location
+ - name: subscriptionId
+ - name: serviceConnection
+  - name: resourceGroupName
+ - name: moduleTemplateFile
+   type: string
+   default: 'azuredeploy.json'
+ - name: moduleParameterFile
+   type: string
+   default: 'azuredeploy.parameters.json'
+ 
+
+ steps:
+   - task: AzureResourceManagerTemplateDeployment@3
+     displayName: 'enforceEnvironmentTag_via_ARMEnforcement'
+     inputs:
+       deploymentScope: 'Resource Group'
+       resourceGroupName: ${{ parameters.resourceGroupName }}
+       location: ${{ parameters.location }}
+       action: 'create or update Resource Group'
+       azureResourceManagerConnection: ${{parameters.serviceConnection }}
+       subscriptionId: ${{ parameters.subscriptionId }}
+       templateLocation: 'Linked artifact'
+       csmFile: ${{ parameters.moduleTemplateFile }}
+       csmParametersFile: ${{ parameters.moduleparameterFile }}
+       deploymentMode: 'Increamental'
